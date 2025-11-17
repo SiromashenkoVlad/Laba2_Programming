@@ -10,6 +10,7 @@ public class Thunderbolt extends SpecialMove {
         super(Type.ELECTRIC, 90, 1.0);
     }
 
+
     @Override
     protected boolean checkAccuracy(Pokemon att, Pokemon def){
         return true;
@@ -27,3 +28,5 @@ public class Thunderbolt extends SpecialMove {
         return "применил специальную атаку Thunderbolt";
     }
 }
+
+

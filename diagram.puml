@@ -1,0 +1,134 @@
+@startuml
+skinparam classAttributeIconSize 0
+
+class Pokemon
+class Move
+class SpecialMove
+class PlayNice {
+    +PlayNice()
+    #applyOppEffects(p: Pokemon): void
+    #checkAccuracy(att: Pokemon, def: Pokemon): boolean
+    +describe(): String
+}
+class AquaJet {
+    +AquaJet()
+    #checkAccuracy(att: Pokemon, def: Pokemon): boolean
+    +describe(): String
+}
+class DazzlingGleam{
+    +DazzlingGleam()
+    #checkAccuracy(att: Pokemon, def: Pokemon): boolean
+    +describe(): String
+}
+class EnergyBall{
+    +EnergyBall()
+    #applyOppEffects(p: Pokemon): void
+    #checkAccuracy(att: Pokemon, def: Pokemon): boolean
+    +describe(): String
+}
+class LeafStorm{
+    +LeafStorm()
+    #applySelfEffects(p: Pokemon): void
+    +describe(): String
+}
+class Rest{
+    +Rest()
+    #checkAccuracy(att: Pokemon, def: Pokemon): boolean
+    #applySelfEffects(p: Pokemon): void
+    +describe(): String
+}
+class RockPolish{
+    +RockPolish()
+    #checkAccuracy(att: Pokemon, def: Pokemon): boolean
+    #applySelfEffects(p: Pokemon): void
+    +describe(): String
+}
+class ShadowClaw{
+    +ShadowClaw()
+    #checkAccuracy(att: Pokemon, def: Pokemon): boolean
+    #calcCriticalHit(pokemon: Pokemon, pokemon1: Pokemon)
+    +describe(): String
+}
+class Tackle{
+    +Tackle()
+    #checkAccuracy(att: Pokemon, def: Pokemon): boolean
+    +describe(): String
+}
+class ThunderBolt{
+    +ThunderBolt()
+    #checkAccuracy(att: Pokemon, def: Pokemon): boolean
+    #applyOppEffects(p: Pokemon): void
+    +describe(): String
+}
+class ZapCannon{
+    +ZapCannon()
+    #checkAccuracy(att: Pokemon, def: Pokemon): boolean
+    #applyOppEffects(p: Pokemon): void
+    +describe(): String
+}
+class Bidoof{
+    +Bidoof(name: String, level: int)
+}
+class Bibarel{
+    +Bibarel(name: String, level: int)
+}
+class Bounsweet{
+    +Bounsweet(name: String, level: int)
+}
+class Genesect{
+    +Genesect(name: String, level: int)
+}
+class Steenee{
+    +Steenee(name: String, level: int)
+}
+class Tsareena{
+    +Tsareena(name: String, level: int)
+}
+Move <|-- DamageMove
+DamageMove <|-- SpecialMove
+
+class PhysicalMove extends DamageMove
+class StatusMove extends Move
+
+Pokemon <|-- Genesect
+Pokemon <|-- Bidoof
+Pokemon <|-- Bounsweet
+Bidoof <|-- Bibarel
+Bounsweet <|-- Steenee
+Steenee <|-- Tsareena
+
+' === Связанные атаки ===
+StatusMove <|-- RockPolish
+
+PhysicalMove <|-- AquaJet
+PhysicalMove <|-- PlayNice
+PhysicalMove <|-- Rest
+PhysicalMove <|-- Tackle
+PhysicalMove <|-- ShadowClaw
+
+SpecialMove <|-- DazzlingGleam
+SpecialMove <|-- EnergyBall
+SpecialMove <|-- LeafStorm
+SpecialMove <|-- ZapCannon
+SpecialMove <|-- ThunderBolt
+
+' == Связи покемонов с атаками ==
+Genesect --> ShadowClaw
+Genesect --> EnergyBall
+Genesect --> ZapCannon
+Genesect --> RockPolish
+
+Bidoof --> ThunderBolt
+Bidoof --> Tackle
+
+Bibarel --> AquaJet
+
+Bounsweet --> Rest
+Bounsweet --> DazzlingGleam
+
+Steenee --> PlayNice
+
+Tsareena --> LeafStorm
+
+
+@enduml

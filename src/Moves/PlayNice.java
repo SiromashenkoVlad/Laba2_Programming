@@ -7,7 +7,7 @@ import ru.ifmo.se.pokemon.Type;
 
 public class PlayNice extends PhysicalMove {
     public PlayNice(){
-        super(Type.NORMAL, 0, 0);
+        super(Type.NORMAL, 0, 100);
     }
 
     @Override

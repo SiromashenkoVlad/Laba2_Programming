@@ -4,7 +4,7 @@ import Moves.PlayNice;
 import ru.ifmo.se.pokemon.Pokemon;
 import ru.ifmo.se.pokemon.Type;
 
-public class Steenee extends Pokemon {
+public class Steenee extends Bounsweet {
     public Steenee(String name, int level){
         super(name, level);
         setType(Type.GRASS);

@@ -8,7 +8,7 @@ import ru.ifmo.se.pokemon.Type;
 
 public class LeafStorm extends SpecialMove {
     public LeafStorm(){
-        super(Type.GRASS, 130, 0.9);
+        super(Type.GRASS, 130, 90);
     }
 
     @Override
